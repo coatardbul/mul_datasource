@@ -1,0 +1,46 @@
+spring:
+  application:
+#  当前实例名
+      name: coatardbul
+  datasource:
+    primary:
+     url:  jdbc:oracle:thin:@127.0.0.1:1521:bedc
+     driverClassName: oracle.jdbc.driver.OracleDriver
+     username: system
+     password: xp14459048
+     maxOpenPreparedStatements: 20
+     time-between-eviction-runs-millis: 18800
+    secondary:
+     url:  jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.208 )(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = sdb)))
+     driverClassName: oracle.jdbc.driver.OracleDriver
+     username: Bedc
+     password: welcome1
+     maxOpenPreparedStatements: 20
+     time-between-eviction-runs-millis: 18800
+
+    
+
+
+    
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.coatardbul.bedc.model.entity
+#sql打印
+  configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.springboot.cloud: debug
+    com.coatardbul.bedc.feign.FundTransResultFeign: debug
+    java.sql.PreparedStatement: debug
+#  path: logs/
+#  file: %d{yyyy-MM-dd}.log
+#    max-size: 1GB
+
+
+server:
+  servlet:
+#  全局路径配置
+    context-path: /bedc
+#    端口号
+#  port: 3333

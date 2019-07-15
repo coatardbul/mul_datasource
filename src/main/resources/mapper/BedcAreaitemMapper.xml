@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coatardbul.mapper.BedcAreaitemMapper">
+  <resultMap id="BaseResultMap" type="com.coatardbul.model.entity.BedcAreaitem">
+    <!--@mbg.generated-->
+    <id column="CODE" jdbcType="VARCHAR" property="code" />
+    <id column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="LEVELNAME" jdbcType="VARCHAR" property="levelname" />
+    <result column="CITYCODE" jdbcType="VARCHAR" property="citycode" />
+    <result column="CITYNAME" jdbcType="VARCHAR" property="cityname" />
+    <result column="PROVINCECODE" jdbcType="VARCHAR" property="provincecode" />
+    <result column="PROVINCE" jdbcType="VARCHAR" property="province" />
+    <result column="TYNAME" jdbcType="CHAR" property="tyname" />
+    <result column="CREATEUSER" jdbcType="VARCHAR" property="createuser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    CODE, "NAME", LEVELNAME, CITYCODE, CITYNAME, PROVINCECODE, PROVINCE, TYNAME, "CREATEUSER"
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from BEDC_AREAITEM
+    where CODE = #{code,jdbcType=VARCHAR}
+      and "NAME" = #{name,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    <!--@mbg.generated-->
+    delete from BEDC_AREAITEM
+    where CODE = #{code,jdbcType=VARCHAR}
+      and "NAME" = #{name,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.coatardbul.bedc.model.entity.BedcAreaitem">
+    <!--@mbg.generated-->
+    insert into BEDC_AREAITEM (CODE, "NAME", LEVELNAME, 
+      CITYCODE, CITYNAME, PROVINCECODE, 
+      PROVINCE, TYNAME, "CREATEUSER"
+      )
+    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{levelname,jdbcType=VARCHAR}, 
+      #{citycode,jdbcType=VARCHAR}, #{cityname,jdbcType=VARCHAR}, #{provincecode,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{tyname,jdbcType=CHAR}, #{createuser,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.coatardbul.bedc.model.entity.BedcAreaitem">
+    <!--@mbg.generated-->
+    insert into BEDC_AREAITEM
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="code != null and code != ''">
+        CODE,
+      </if>
+      <if test="name != null and name != ''">
+        "NAME",
+      </if>
+      <if test="levelname != null and levelname != ''">
+        LEVELNAME,
+      </if>
+      <if test="citycode != null and citycode != ''">
+        CITYCODE,
+      </if>
+      <if test="cityname != null and cityname != ''">
+        CITYNAME,
+      </if>
+      <if test="provincecode != null and provincecode != ''">
+        PROVINCECODE,
+      </if>
+      <if test="province != null and province != ''">
+        PROVINCE,
+      </if>
+      <if test="tyname != null and tyname != ''">
+        TYNAME,
+      </if>
+      <if test="createuser != null and createuser != ''">
+        "CREATEUSER",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="code != null and code != ''">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null and name != ''">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="levelname != null and levelname != ''">
+        #{levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="citycode != null and citycode != ''">
+        #{citycode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null and cityname != ''">
+        #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="provincecode != null and provincecode != ''">
+        #{provincecode,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null and province != ''">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="tyname != null and tyname != ''">
+        #{tyname,jdbcType=CHAR},
+      </if>
+      <if test="createuser != null and createuser != ''">
+        #{createuser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.coatardbul.bedc.model.entity.BedcAreaitem">
+    <!--@mbg.generated-->
+    update BEDC_AREAITEM
+    <set>
+      <if test="levelname != null and levelname != ''">
+        LEVELNAME = #{levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="citycode != null and citycode != ''">
+        CITYCODE = #{citycode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null and cityname != ''">
+        CITYNAME = #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="provincecode != null and provincecode != ''">
+        PROVINCECODE = #{provincecode,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null and province != ''">
+        PROVINCE = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="tyname != null and tyname != ''">
+        TYNAME = #{tyname,jdbcType=CHAR},
+      </if>
+      <if test="createuser != null and createuser != ''">
+        "CREATEUSER" = #{createuser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CODE = #{code,jdbcType=VARCHAR}
+      and "NAME" = #{name,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.coatardbul.bedc.model.entity.BedcAreaitem">
+    <!--@mbg.generated-->
+    update BEDC_AREAITEM
+    set LEVELNAME = #{levelname,jdbcType=VARCHAR},
+      CITYCODE = #{citycode,jdbcType=VARCHAR},
+      CITYNAME = #{cityname,jdbcType=VARCHAR},
+      PROVINCECODE = #{provincecode,jdbcType=VARCHAR},
+      PROVINCE = #{province,jdbcType=VARCHAR},
+      TYNAME = #{tyname,jdbcType=CHAR},
+      "CREATEUSER" = #{createuser,jdbcType=VARCHAR}
+    where CODE = #{code,jdbcType=VARCHAR}
+      and "NAME" = #{name,jdbcType=VARCHAR}
+  </update>
+</mapper>

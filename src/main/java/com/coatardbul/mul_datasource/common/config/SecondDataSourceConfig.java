@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  * @date: 2019/6/27
  */
 @Configuration
-@MapperScan(basePackages = "com.coatardbul.mul_datasource.secondMapper", sqlSessionTemplateRef  = "test2SqlSessionTemplate")
+@MapperScan(basePackages = "com.coatardbul.mul_datasource.secondMapper", sqlSessionTemplateRef = "test2SqlSessionTemplate")
 
 public class SecondDataSourceConfig {
     @Bean(name = "test2DataSource")

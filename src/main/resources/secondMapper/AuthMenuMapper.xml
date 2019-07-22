@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coatardbul.mul_datasource.secondMapper.AuthMenuMapper">
+  <resultMap id="BaseResultMap" type="com.coatardbul.mul_datasource.model.entity.AuthMenu">
+    <!--@mbg.generated-->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="TEXT" jdbcType="VARCHAR" property="text" />
+    <result column="PATH" jdbcType="VARCHAR" property="path" />
+    <result column="PARENT_ID" jdbcType="VARCHAR" property="parentId" />
+    <result column="LEAF" jdbcType="DECIMAL" property="leaf" />
+    <result column="ORDINAL" jdbcType="DECIMAL" property="ordinal" />
+    <result column="RESOURCE_ID" jdbcType="DECIMAL" property="resourceId" />
+    <result column="IS_NEED_MENU" jdbcType="DECIMAL" property="isNeedMenu" />
+    <result column="JS_NAME" jdbcType="VARCHAR" property="jsName" />
+    <result column="INIT_PARAMS" jdbcType="VARCHAR" property="initParams" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, "TEXT", "PATH", PARENT_ID, LEAF, ORDINAL, RESOURCE_ID, IS_NEED_MENU, JS_NAME, 
+    INIT_PARAMS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from AUTH_MENU
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from AUTH_MENU
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.coatardbul.mul_datasource.model.entity.AuthMenu">
+    <!--@mbg.generated-->
+    insert into AUTH_MENU (ID, "TEXT", "PATH", 
+      PARENT_ID, LEAF, ORDINAL, 
+      RESOURCE_ID, IS_NEED_MENU, JS_NAME, 
+      INIT_PARAMS)
+    values (#{id,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{parentId,jdbcType=VARCHAR}, #{leaf,jdbcType=DECIMAL}, #{ordinal,jdbcType=DECIMAL}, 
+      #{resourceId,jdbcType=DECIMAL}, #{isNeedMenu,jdbcType=DECIMAL}, #{jsName,jdbcType=VARCHAR}, 
+      #{initParams,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.coatardbul.mul_datasource.model.entity.AuthMenu">
+    <!--@mbg.generated-->
+    insert into AUTH_MENU
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null and id != ''">
+        ID,
+      </if>
+      <if test="text != null and text != ''">
+        "TEXT",
+      </if>
+      <if test="path != null and path != ''">
+        "PATH",
+      </if>
+      <if test="parentId != null and parentId != ''">
+        PARENT_ID,
+      </if>
+      <if test="leaf != null">
+        LEAF,
+      </if>
+      <if test="ordinal != null">
+        ORDINAL,
+      </if>
+      <if test="resourceId != null">
+        RESOURCE_ID,
+      </if>
+      <if test="isNeedMenu != null">
+        IS_NEED_MENU,
+      </if>
+      <if test="jsName != null and jsName != ''">
+        JS_NAME,
+      </if>
+      <if test="initParams != null and initParams != ''">
+        INIT_PARAMS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null and id != ''">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="text != null and text != ''">
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null and path != ''">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null and parentId != ''">
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="leaf != null">
+        #{leaf,jdbcType=DECIMAL},
+      </if>
+      <if test="ordinal != null">
+        #{ordinal,jdbcType=DECIMAL},
+      </if>
+      <if test="resourceId != null">
+        #{resourceId,jdbcType=DECIMAL},
+      </if>
+      <if test="isNeedMenu != null">
+        #{isNeedMenu,jdbcType=DECIMAL},
+      </if>
+      <if test="jsName != null and jsName != ''">
+        #{jsName,jdbcType=VARCHAR},
+      </if>
+      <if test="initParams != null and initParams != ''">
+        #{initParams,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.coatardbul.mul_datasource.model.entity.AuthMenu">
+    <!--@mbg.generated-->
+    update AUTH_MENU
+    <set>
+      <if test="text != null and text != ''">
+        "TEXT" = #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null and path != ''">
+        "PATH" = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null and parentId != ''">
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="leaf != null">
+        LEAF = #{leaf,jdbcType=DECIMAL},
+      </if>
+      <if test="ordinal != null">
+        ORDINAL = #{ordinal,jdbcType=DECIMAL},
+      </if>
+      <if test="resourceId != null">
+        RESOURCE_ID = #{resourceId,jdbcType=DECIMAL},
+      </if>
+      <if test="isNeedMenu != null">
+        IS_NEED_MENU = #{isNeedMenu,jdbcType=DECIMAL},
+      </if>
+      <if test="jsName != null and jsName != ''">
+        JS_NAME = #{jsName,jdbcType=VARCHAR},
+      </if>
+      <if test="initParams != null and initParams != ''">
+        INIT_PARAMS = #{initParams,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.coatardbul.mul_datasource.model.entity.AuthMenu">
+    <!--@mbg.generated-->
+    update AUTH_MENU
+    set "TEXT" = #{text,jdbcType=VARCHAR},
+      "PATH" = #{path,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      LEAF = #{leaf,jdbcType=DECIMAL},
+      ORDINAL = #{ordinal,jdbcType=DECIMAL},
+      RESOURCE_ID = #{resourceId,jdbcType=DECIMAL},
+      IS_NEED_MENU = #{isNeedMenu,jdbcType=DECIMAL},
+      JS_NAME = #{jsName,jdbcType=VARCHAR},
+      INIT_PARAMS = #{initParams,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

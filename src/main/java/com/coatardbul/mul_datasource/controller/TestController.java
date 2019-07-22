@@ -3,7 +3,6 @@ package com.coatardbul.mul_datasource.controller;
 
 
 
-import com.coatardbul.mul_datasource.service.job.EntryAccountRecordProcessStatusService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -24,14 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
 
-    @Autowired
-    EntryAccountRecordProcessStatusService entryAccountRecordProcessStatusService;
-    @ApiOperation(value = "测试", notes = "")
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
-    public Object directFundPay(@RequestBody String str) {
 
-       // fundPayResultService.fundPayPush();
-        entryAccountRecordProcessStatusService.entryAccountRecordProcessStatusQuery();;
-        return entryAccountRecordProcessStatusService;
-    }
+
 }
